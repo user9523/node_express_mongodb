@@ -1,6 +1,6 @@
 module.exports = {
 
     index: function(req, res){
-        res.send()
+        res.send('The home:index controller')
     }
 }

@@ -1,12 +1,12 @@
 const path = require('path')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
-cosnt express = require('express')
-cosnt bodyParser = require('body-parser')
+const express = require('express')
 const cookieParser = require('cookie-parser')
 const morgan = require('morgan')
 const metghodOverride = require('method-override')
 const errorHandler =  require('errorhandler')
+const routers = require('./routes')
 
 module.exports = function(app){
     app.use(morgan('dev'))
@@ -19,6 +19,6 @@ module.exports = function(app){
     if(app.get('env') === 'development'){
         app.use(errorHandler());
     }
-
+    routers(app)
     return app
 }
